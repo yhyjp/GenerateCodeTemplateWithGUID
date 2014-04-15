@@ -1,0 +1,6 @@
+﻿#ifndef __$(ABC)__$(GUID)__
+#define __$(ABC)__$(GUID)__
+
+// $(EXAMPLE) ....
+
+#endif // __$(ABC)__$(GUID)__
