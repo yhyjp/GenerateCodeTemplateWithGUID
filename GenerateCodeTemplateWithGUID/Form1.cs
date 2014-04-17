@@ -13,7 +13,8 @@ namespace GenerateCodeTemplateWithGUID
   public partial class Form1 : Form
   {
     String currentGUID_;
-
+    const String varFile = "var_list.txt";
+  
     public Form1()
     {
       InitializeComponent();
@@ -22,6 +23,18 @@ namespace GenerateCodeTemplateWithGUID
     private void Form1_Load(object sender, EventArgs e)
     {
       refreshGUID();
+      loadVarFile();
+    }
+
+    private void loadVarFile()
+    {
+      if (File.Exists(varFile))
+      {
+        String fileName = varFile;
+        StreamReader sr = new StreamReader(fileName, Encoding.GetEncoding("Shift_JIS"));
+        richTextBoxVariable.Text = sr.ReadToEnd();
+        sr.Close();
+      }
     }
 
     private void loadTemplateFile()
@@ -94,6 +107,13 @@ namespace GenerateCodeTemplateWithGUID
     private void buttonLoadFile_Click(object sender, EventArgs e)
     {
       loadTemplateFile();
+    }
+
+    private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        StreamWriter sw = new StreamWriter(varFile, false);
+        sw.Write(richTextBoxVariable.Text);
+        sw.Close();
     }
   }
 }

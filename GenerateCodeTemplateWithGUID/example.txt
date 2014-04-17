@@ -1,6 +1,9 @@
-﻿#ifndef __$(ABC)__$(GUID)__
-#define __$(ABC)__$(GUID)__
+﻿#ifndef __RM_$(DEF)__$(GUID)__
+#define __RM_$(DEF)__$(GUID)__
 
-// $(EXAMPLE) ....
+namespace RomanceEngine {
+namespace $(NS_1) {
+} // $(NS_1)
+} // RomanceEngine
 
-#endif // __$(ABC)__$(GUID)__
+#endif // __RM_$(DEF)__$(GUID)__

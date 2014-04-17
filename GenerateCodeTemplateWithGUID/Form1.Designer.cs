@@ -76,6 +76,8 @@
       // 
       // richTextBoxSrc
       // 
+      this.richTextBoxSrc.AcceptsTab = true;
+      this.richTextBoxSrc.EnableAutoDragDrop = true;
       this.richTextBoxSrc.Location = new System.Drawing.Point(15, 18);
       this.richTextBoxSrc.Name = "richTextBoxSrc";
       this.richTextBoxSrc.Size = new System.Drawing.Size(426, 117);
@@ -121,11 +123,13 @@
       // 
       // richTextBoxVariable
       // 
+      this.richTextBoxVariable.AcceptsTab = true;
+      this.richTextBoxVariable.EnableAutoDragDrop = true;
       this.richTextBoxVariable.Location = new System.Drawing.Point(9, 48);
       this.richTextBoxVariable.Name = "richTextBoxVariable";
       this.richTextBoxVariable.Size = new System.Drawing.Size(428, 82);
       this.richTextBoxVariable.TabIndex = 14;
-      this.richTextBoxVariable.Text = "$(EXAMPLE) example\n$(ABC) AbC\n";
+      this.richTextBoxVariable.Text = "$(EXAMPLE) example\n$(NS_1) XXX\n$(DEF) YYY\n";
       // 
       // groupBox1
       // 
@@ -175,6 +179,7 @@
       this.MaximizeBox = false;
       this.Name = "Form1";
       this.Text = "GUID Code Templater";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
       this.Load += new System.EventHandler(this.Form1_Load);
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
